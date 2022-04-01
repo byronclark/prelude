@@ -32,3 +32,10 @@ var/
 .lsp-session*
 gotools/
 eln-cache/
+*.eld
+tutorial/
+anaconda-mode/
+/smex-items
+/org-roam.db
+/multisession/
+/.org-id-locations

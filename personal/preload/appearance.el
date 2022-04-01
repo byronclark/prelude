@@ -1,0 +1,48 @@
+(require 'package)
+
+(customize-set-variable 'prelude-minimalistic-ui t)
+
+;; Theme setup
+
+;; (when (package-installed-p 'ef-themes)
+;;   (setq ef-themes-headings
+;;         '((1 . (semibold 1.5))
+;;           (2 . (semibold 1.3))
+;;           (3 . (semibold 1.1))
+;;           (t . (semibold))))
+;;   (setq ef-themes-to-toggle '(ef-spring ef-trio-dark))
+;;   (setq prelude-theme 'ef-spring))
+
+;; (setq modus-themes-headings
+;;       '((1 . (semibold 1.5))
+;;         (2 . (semibold 1.3))
+;;         (3 . (semibold 1.1))
+;;         (t . (semibold))))
+;; (setq byronc/themes-to-toggle '(modus-operandi modus-vivendi))
+;; (setq prelude-theme 'modus-operandi)
+
+(when (package-installed-p 'catppuccin-theme)
+  (setq catppuccin-flavor 'macchiato)
+  (setq catppuccin-highlight-matches t)
+  (setq byronc/catppuccin-toggle-themes '(macchiato latte))
+  (setq prelude-theme 'catppuccin))
+
+(defun byronc/-load-theme (theme)
+  (disable-theme (car custom-enabled-themes))
+  (load-theme theme :no-confirm))
+
+(defun byronc/themes-toggle ()
+  (interactive)
+  (if (eq (car custom-enabled-themes) 'catppuccin)
+      ;; Special handling for catppuccin as it uses a flavor variable instead of separate themes.
+      (when-let* ((one (car byronc/catppuccin-toggle-themes))
+		  (two (cadr byronc/catppuccin-toggle-themes)))
+	(if (eq catppuccin-flavor one)
+	    (setq catppuccin-flavor two)
+	  (setq catppuccin-flavor one))
+        (catppuccin-reload))
+    (when-let* ((one (car byronc/themes-to-toggle))
+                (two (cadr byronc/themes-to-toggle)))
+      (if (eq (car custom-enabled-themes) one)
+          (byronc/-load-theme two)
+        (byronc/-load-theme one)))))
