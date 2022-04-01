@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Daily reflection
+# key: reflect
+# --
+- grateful :: $1
+- focus :: $2
+- let-go :: $3
+$0
