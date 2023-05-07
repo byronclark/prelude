@@ -24,6 +24,7 @@
 (when (package-installed-p 'catppuccin-theme)
   (setq catppuccin-flavor 'macchiato)
   (setq catppuccin-highlight-matches t)
+  (setq catppuccin-italic-comments t)
   (setq byronc/catppuccin-toggle-themes '(macchiato latte))
   (setq prelude-theme 'catppuccin))
 
