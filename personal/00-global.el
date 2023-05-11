@@ -14,6 +14,7 @@
    modus-themes
    ob-mermaid
    org-roam
+   consult-org-roam
    pyvenv
    ripgrep
    terraform-mode
@@ -172,8 +173,13 @@
   (setq org-roam-database-connector 'sqlite-builtin))
 
 (org-roam-db-autosync-enable)
+(setq consult-org-roam-grep-func #'consult-ripgrep)
+(setq consult-org-roam-buffer-after-buffers t)
+(consult-org-roam-mode 1)
+
 (global-set-key (kbd "C-c n f") 'org-roam-node-find)
 (global-set-key (kbd "C-c n j") 'org-roam-dailies-goto-today)
+(global-set-key (kbd "C-c n s") 'consult-org-roam-search)
 
 (defun byronc/org-mode-settings ()
   (define-key org-mode-map (kbd "C-c n i") 'org-roam-node-insert)
