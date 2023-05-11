@@ -174,12 +174,11 @@
 
 (org-roam-db-autosync-enable)
 (setq consult-org-roam-grep-func #'consult-ripgrep)
-(setq consult-org-roam-buffer-after-buffers t)
 (consult-org-roam-mode 1)
 
-(global-set-key (kbd "C-c n f") 'org-roam-node-find)
-(global-set-key (kbd "C-c n j") 'org-roam-dailies-goto-today)
+(global-set-key (kbd "C-c n f") 'consult-org-roam-file-find)
 (global-set-key (kbd "C-c n s") 'consult-org-roam-search)
+(global-set-key (kbd "C-c n j") 'org-roam-dailies-goto-today)
 
 (defun byronc/org-mode-settings ()
   (define-key org-mode-map (kbd "C-c n i") 'org-roam-node-insert)
@@ -190,6 +189,12 @@
   (auto-fill-mode 1))
 
 (add-hook 'prelude-org-mode-hook #'byronc/org-mode-settings t)
+;; Prevent poor interaction between consult-org-roam, prelude whitespace cleanup
+;; on save, and super-save. Otherwise we get to enter a space manually after
+;; each use of org-roam-node-insert outside of a capture buffer.
+;; The downside is that org buffers have to be saved explicitly.
+(add-to-list 'super-save-predicates
+             (lambda () (not (eq major-mode 'org-mode))))
 
 ;; *** Languages ***
 (defun byronc/prog-mode-settings ()
