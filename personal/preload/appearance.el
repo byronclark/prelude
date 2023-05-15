@@ -4,20 +4,21 @@
 
 ;; Theme setup
 
-;; (when (package-installed-p 'ef-themes)
-;;   (setq ef-themes-headings
-;;         '((1 . (semibold 1.5))
-;;           (2 . (semibold 1.3))
-;;           (3 . (semibold 1.1))
-;;           (t . (semibold))))
-;;   (setq ef-themes-to-toggle '(ef-spring ef-trio-dark))
-;;   (setq prelude-theme 'ef-spring))
+(when (package-installed-p 'ef-themes)
+  (setq ef-themes-headings
+        '((1 . (semibold 1.5))
+          (2 . (semibold 1.3))
+          (3 . (semibold 1.1))
+          (t . (semibold))))
+  ;; (setq ef-themes-to-toggle '(ef-spring ef-trio-dark))
+  ;; (setq prelude-theme 'ef-spring)
+  )
 
-;; (setq modus-themes-headings
-;;       '((1 . (semibold 1.5))
-;;         (2 . (semibold 1.3))
-;;         (3 . (semibold 1.1))
-;;         (t . (semibold))))
+(setq modus-themes-headings
+      '((1 . (semibold 1.5))
+        (2 . (semibold 1.3))
+        (3 . (semibold 1.1))
+        (t . (semibold))))
 ;; (setq byronc/themes-to-toggle '(modus-operandi modus-vivendi))
 ;; (setq prelude-theme 'modus-operandi)
 
