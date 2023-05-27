@@ -133,6 +133,9 @@
 ;; yasnippet
 (yas-global-mode +1)
 
+;; consult and friends
+(setq consult-project-function (lambda (_) (projectile-project-root)))
+
 ;; *** Org Mode ***
 (setq org-directory "~/org")
 (setq org-roam-directory "~/org/notes")
