@@ -60,8 +60,8 @@
 ;; (ligature-set-ligatures 'prog-mode monolisa-v2-ligatures/all)
 ;; (ligature-set-ligatures 'org-mode monolisa-v2-ligatures/whitespace)
 ;; Iosevka
-(ligature-set-ligatures 'prog-mode iosevka-ligatures/coding)
-(global-ligature-mode 't)
+;; (ligature-set-ligatures 'prog-mode iosevka-ligatures/coding)
+;; (global-ligature-mode 't)
 
 (setq fontaine-presets
       '((regular
