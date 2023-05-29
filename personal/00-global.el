@@ -13,6 +13,7 @@
    minions
    modus-themes
    ob-mermaid
+   org-modern
    org-roam
    consult-org-roam
    pyvenv
@@ -68,19 +69,20 @@
          :default-family "Iosevka"
          :default-weight normal
          :default-height 140
-         :italic-family "Iosevka"
+         :fixed-pitch-family "Iosevka"
+         :variable-pitch-family "Iosevka Aile"
          :italic-slant italic)
         (macbook
          :default-family "Iosevka"
          :default-weight normal
          :default-height 160
-         :italic-family "Iosevka"
+         :fixed-pitch-family "Iosevka"
+         :variable-pitch-family "Iosevka Aile"
          :italic-slant italic)
         (shared
          :default-family "MonoLisa"
          :default-weight normal
          :default-height 190
-         :italic-family "MonoLisa"
          :italic-slant italic)))
 
 (when (display-graphic-p)
@@ -137,6 +139,24 @@
 (setq consult-project-function (lambda (_) (projectile-project-root)))
 
 ;; *** Org Mode ***
+(setq
+ ;; Edit settings
+ org-auto-align-tags nil
+ org-tags-column 0
+ org-catch-invisible-edits 'show-and-error
+ org-special-ctrl-a/e t
+ org-insert-heading-respect-content t
+
+ ;; Org styling, hide markup etc.
+ org-hide-emphasis-markers t
+ org-pretty-entities t
+ org-ellipsis "…"
+
+ ;; Agenda styling
+ org-agenda-tags-column 0
+ org-agenda-block-separator ?─)
+(global-org-modern-mode)
+
 (setq org-directory "~/org")
 (setq org-roam-directory "~/org/notes")
 (setq org-agenda-files (list "inbox.org"
@@ -189,9 +209,13 @@
   (define-key org-mode-map (kbd "C-c n a") 'org-roam-alias-add)
   (define-key org-mode-map (kbd "C-c n l") 'org-roam-buffer-toggle)
   (define-key org-mode-map (kbd "C-c n r") 'org-roam-refile)
-  (auto-fill-mode 1))
+  (auto-fill-mode -1)
+  (whitespace-mode -1)
+  (visual-line-mode)
+  (variable-pitch-mode))
 
 (add-hook 'prelude-org-mode-hook #'byronc/org-mode-settings t)
+
 ;; Prevent poor interaction between consult-org-roam, prelude whitespace cleanup
 ;; on save, and super-save. Otherwise we get to enter a space manually after
 ;; each use of org-roam-node-insert outside of a capture buffer.
