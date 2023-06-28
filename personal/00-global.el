@@ -1,6 +1,8 @@
 ;; *** Additional Packages ***
 (prelude-require-packages
- '(catppuccin-theme
+ '(use-package
+   quelpa-use-package
+   catppuccin-theme
    dimmer
    direnv
    ef-themes
@@ -224,6 +226,14 @@
              (lambda () (not (eq major-mode 'org-mode))))
 
 ;; *** Languages ***
+(require 'quelpa-use-package)
+(use-package copilot
+  :quelpa (copilot :fetcher github
+                   :repo "zerolfx/copilot.el"
+                   :branch "main"
+                   :files ("dist" "*.el"))
+  :hook (prelude-prog-mode . copilot-mode))
+
 (defun byronc/prog-mode-settings ()
   (setq fill-column 120))
 
