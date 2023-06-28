@@ -241,6 +241,7 @@
 
 ;; **** Clojure ****
 (setq cider-repl-display-help-banner nil)
+(setq cider-repl-display-in-current-window t)
 (setq cider-eldoc-display-for-symbol-at-point nil)
 (setq clojure-toplevel-inside-comment-form t)
 (setq cider-nbb-command "npx nbb")      ; Prefer project version of nbb.
