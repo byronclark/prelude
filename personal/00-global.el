@@ -104,6 +104,7 @@
 
 ;; Window management
 (setq aw-scope 'frame)
+(setq ediff-split-window-function 'split-window-horizontally)
 
 (setq frame-title-format
       '("[" invocation-name "] " (:eval (if (buffer-file-name)
