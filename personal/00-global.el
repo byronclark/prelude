@@ -239,7 +239,7 @@
   :hook (prelude-prog-mode . copilot-mode))
 
 (defun byronc/prog-mode-settings ()
-  (setq fill-column 120))
+  (setq fill-column 90))
 
 (add-hook 'prelude-prog-mode-hook #'byronc/prog-mode-settings t)
 
