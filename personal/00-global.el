@@ -1,3 +1,6 @@
+;; Settings that influence package loading
+(setq quelpa-checkout-melpa-p nil)      ;quelpa only used to install packages outside of MELPA
+
 ;; *** Additional Packages ***
 (prelude-require-packages
  '(use-package
