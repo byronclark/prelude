@@ -261,6 +261,9 @@
 ;; **** Fennel ****
 (add-to-list 'auto-mode-alist '("\\.fnl\\'" . fennel-mode))
 
+;; **** Go ****
+(add-hook 'go-mode-hook (lambda () (setq tab-width 4)))
+
 ;; **** JavaScript
 (setq-default js-indent-level 2)
 (add-hook 'js-mode-hook #'lsp-deferred)
