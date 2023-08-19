@@ -80,7 +80,7 @@
         (regular-monolisa
          :default-family "MonoLisa"
          :default-weight normal
-         :default-height 130
+         :default-height 120
          :fixed-pitch-family "MonoLisa"
          :italic-slant italic)
         (regular-jetbrains
