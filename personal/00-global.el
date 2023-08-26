@@ -10,6 +10,7 @@
    direnv
    ef-themes
    fennel-mode
+   fish-mode
    fontaine
    jet
    ligature
