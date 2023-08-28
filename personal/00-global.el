@@ -226,7 +226,10 @@
                    :repo "zerolfx/copilot.el"
                    :branch "main"
                    :files ("dist" "*.el"))
-  :hook (prelude-prog-mode . copilot-mode))
+  :hook (prelude-prog-mode . copilot-mode)
+  :bind (:map copilot-mode-map
+              ("<tab>" . copilot-accept-completion)
+              ("TAB" . copilot-accept-completion)))
 
 (defun byronc/prog-mode-settings ()
   (setq fill-column 90))
