@@ -13,7 +13,6 @@
    fish-mode
    fontaine
    jet
-   ligature
    lsp-pyright
    mermaid-mode
    minions
@@ -35,40 +34,6 @@
 ;; Default italic face sets underline if the font supports it
 (custom-set-faces
  '(italic ((t (:slant italic)))))
-
-;; Ligatures
-(setq monolisa-v2-ligatures/coding
-      '("<!---" "--->" "|||>" "<!--" "<|||" "<==>" "-->" "->>" "-<<" "..=" "!=="
-        "#_(" "/==" "||>" "||=" "|->" "===" "==>" "=>>" "=<<" "=/=" ">->" ">=>"
-        ">>-" ">>=" "<--" "<->" "<-<" "<||" "<|>" "<=" "<==" "<=>" "<=<" "<<-"
-        "<<=" "<~>" "<~~" "~~>" ">&-" "<&-" "&>>" "&>" "->" "-<" "-~" ".=" "!="
-        "#_" "/=" "|=" "|>" "==" "=>" ">-" ">=" "<-" "<|" "<~" "~-" "~@" "~="
-        "~>" "~~"))
-
-(setq monolisa-v2-ligatures/whitespace
-      '("---" "'''" "\"\"\"" "..." "..<" "{|" "[|" ".?" "::" ":::" "::=" ":="
-        ":>" ":<" "\;\;" "!!" "!!." "!!!"  "?." "?:" "??" "?=" "**" "***" "*>"
-        "*/" "--" "#:" "#!" "#?" "##" "###" "####" "#=" "/*" "/>" "//" "/**"
-        "///" "$(" ">&" "<&" "&&" "|}" "|]" "$>" ".." "++" "+++" "+>" "=:="
-        "=!=" ">:" ">>" ">>>" "<:" "<*" "<*>" "<$" "<$>" "<+" "<+>" "<>" "<<"
-        "<<<" "</" "</>" "^=" "%%"))
-
-(setq monolisa-v2-ligatures/all (append monolisa-v2-ligatures/coding
-                                        monolisa-v2-ligatures/whitespace))
-
-(setq iosevka-ligatures/coding
-      '("<---" "<--"  "<<-" "<-" "->" "-->" "--->" "<->" "<-->" "<--->" "<---->" "<!--"
-        "<==" "<===" "<=" "=>" "=>>" "==>" "===>" ">=" "<=>" "<==>" "<===>" "<====>" "<!---"
-        "<~~" "<~" "~>" "~~>" "::" ":::" "==" "!=" "===" "!=="
-        ":=" ":-" ":+" "<*" "<*>" "*>" "<|" "<|>" "|>" "+:" "-:" "=:" "<******>" "++" "+++"))
-
-;; Selected ligature sets must match the font in use.
-;; MonoLisa
-;; (ligature-set-ligatures 'prog-mode monolisa-v2-ligatures/all)
-;; (ligature-set-ligatures 'org-mode monolisa-v2-ligatures/whitespace)
-;; Iosevka
-;; (ligature-set-ligatures 'prog-mode iosevka-ligatures/coding)
-;; (global-ligature-mode 't)
 
 (setq fontaine-presets
       '((regular
