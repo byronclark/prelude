@@ -62,6 +62,18 @@
          :fixed-pitch-family "Iosevka"
          :variable-pitch-family "Iosevka Aile"
          :italic-slant italic)
+        (macbook-monolisa
+         :default-family "MonoLisa"
+         :default-weight normal
+         :default-height 150
+         :fixed-pitch-family "MonoLisa"
+         :italic-slant italic)
+        (macbook-jetbrains
+         :default-family "JetBrains Mono"
+         :default-weight normal
+         :default-height 150
+         :fixed-pitch-family "JetBrains Mono"
+         :italic-slant italic)
         (shared
          :default-family "MonoLisa"
          :default-weight normal
