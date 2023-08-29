@@ -55,6 +55,12 @@
          :default-height 130
          :fixed-pitch-family "JetBrains Mono"
          :italic-slant italic)
+        (regular-victormono
+         :default-family "Victor Mono"
+         :default-weight medium
+         :default-height 130
+         :fixed-pitch-family "Victor Mono"
+         :italic-slant italic)
         (macbook
          :default-family "Iosevka"
          :default-weight normal
