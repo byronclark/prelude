@@ -41,13 +41,7 @@
          :default-weight normal
          :default-height 140
          :fixed-pitch-family "Iosevka"
-         :variable-pitch-family "Iosevka Aile"
-         :italic-slant italic)
-        (regular-monolisa
-         :default-family "MonoLisa"
-         :default-weight normal
-         :default-height 120
-         :fixed-pitch-family "MonoLisa"
+         :variable-pitch-family "Iosevka"
          :italic-slant italic)
         (regular-jetbrains
          :default-family "JetBrains Mono"
@@ -55,24 +49,12 @@
          :default-height 130
          :fixed-pitch-family "JetBrains Mono"
          :italic-slant italic)
-        (regular-victormono
-         :default-family "Victor Mono"
-         :default-weight medium
-         :default-height 130
-         :fixed-pitch-family "Victor Mono"
-         :italic-slant italic)
         (macbook
          :default-family "Iosevka"
          :default-weight normal
          :default-height 160
          :fixed-pitch-family "Iosevka"
-         :variable-pitch-family "Iosevka Aile"
-         :italic-slant italic)
-        (macbook-monolisa
-         :default-family "MonoLisa"
-         :default-weight normal
-         :default-height 150
-         :fixed-pitch-family "MonoLisa"
+         :variable-pitch-family "Iosevka"
          :italic-slant italic)
         (macbook-jetbrains
          :default-family "JetBrains Mono"
