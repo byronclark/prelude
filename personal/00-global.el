@@ -15,7 +15,7 @@
    jet
    lsp-pyright
    mermaid-mode
-   minions
+   mood-line
    modus-themes
    ob-mermaid
    org-modern
@@ -81,7 +81,7 @@
 (setq next-screen-context-lines 5)
 
 ;; Modeline setup
-(minions-mode 1)
+(mood-line-mode)
 
 ;; Window management
 (setq aw-scope 'frame)
