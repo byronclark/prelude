@@ -4,28 +4,28 @@
 ;; *** Additional Packages ***
 (prelude-require-packages
  '(use-package
-   quelpa-use-package
-   catppuccin-theme
-   dimmer
-   direnv
-   ef-themes
-   fennel-mode
-   fish-mode
-   fontaine
-   jet
-   lsp-pyright
-   mermaid-mode
-   mood-line
-   modus-themes
-   ob-mermaid
-   org-modern
-   org-roam
-   consult-org-roam
-   pyvenv
-   ripgrep
-   terraform-mode
-   yasnippet
-   yasnippet-snippets))
+    quelpa-use-package
+    catppuccin-theme
+    dimmer
+    direnv
+    ef-themes
+    fennel-mode
+    fish-mode
+    fontaine
+    jet
+    lsp-pyright
+    mermaid-mode
+    mood-line
+    modus-themes
+    ob-mermaid
+    org-modern
+    org-roam
+    consult-org-roam
+    pyvenv
+    ripgrep
+    terraform-mode
+    yasnippet
+    yasnippet-snippets))
 
 (direnv-mode)
 (setq help-window-select t)
