@@ -215,9 +215,13 @@
                    :branch "main"
                    :files ("dist" "*.el"))
   :hook (prelude-prog-mode . copilot-mode)
-  :bind (:map copilot-mode-map
-              ("<tab>" . copilot-accept-completion)
-              ("TAB" . copilot-accept-completion)))
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("M-n" . 'copilot-next-completion)
+              ("M-p" . 'copilot-previous-completion)))
 
 (defun byronc/prog-mode-settings ()
   (setq fill-column 90))
