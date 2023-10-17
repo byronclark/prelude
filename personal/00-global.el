@@ -21,6 +21,7 @@
     org-modern
     org-roam
     consult-org-roam
+    python-black
     pyvenv
     ripgrep
     terraform-mode
@@ -165,7 +166,8 @@
 
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((mermaid . t)))
+ '((mermaid . t)
+   (python . t)))
 
 (setq find-file-visit-truename t)
 (setq org-roam-dailies-directory "daily/")
@@ -256,12 +258,16 @@
 ;; **** GraphQL ****
 (setq-default graphql-indent-level 4)
 
+;; **** Markdown ****
+(setq markdown-command "pandoc")
+
 ;; **** Python ****
 (defun byronc/python-mode-settings ()
   (setenv "WORKON_HOME" "~/.pyenv/versions")
   (pyvenv-mode)
   (require 'lsp-pyright)
-  (lsp-deferred))
+  (lsp-deferred)
+  (python-black-on-save-mode-enable-dwim))
 
 (add-hook 'python-mode-hook #'byronc/python-mode-settings)
 
