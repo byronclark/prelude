@@ -8,6 +8,7 @@
     catppuccin-theme
     dimmer
     direnv
+    eat
     ef-themes
     fennel-mode
     fish-mode
@@ -304,4 +305,6 @@
 (global-unset-key (kbd "C-z"))                  ; Bad habits and muscle memory mean I hit this key too often.
 (define-key prelude-mode-map (kbd "C-c o") nil) ; This one doesn't seem useful and is too easy to hit inadvertently
 (define-key prelude-mode-map (kbd "C-c n") nil) ; Replaced by personal org-roam bindings
+(define-key prelude-mode-map (kbd "C-c t") nil) ; Replaced with eat
+(global-set-key (kbd "C-c t") 'eat)
 (global-set-key (kbd "C-c *") 'isearch-forward-thing-at-point)
