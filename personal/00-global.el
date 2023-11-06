@@ -109,6 +109,9 @@
 (setq whitespace-line-column 120)
 (setq whitespace-style '(face tabs empty trailing lines-char))
 
+;; use a posix shell for commands
+(setq shell-file-name "bash")
+
 ;; utf-8 everywhere
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
