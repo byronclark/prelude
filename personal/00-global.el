@@ -10,6 +10,8 @@
     direnv
     eat
     ef-themes
+    embark
+    embark-consult
     fennel-mode
     fish-mode
     fontaine
@@ -26,6 +28,7 @@
     pyvenv
     ripgrep
     terraform-mode
+    wgrep
     yasnippet
     yasnippet-snippets))
 
