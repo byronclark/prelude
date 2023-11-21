@@ -270,6 +270,9 @@
 ;; **** Markdown ****
 (setq markdown-command "pandoc")
 
+;; **** OCaml ****
+(add-hook 'tuareg-mode-hook #'lsp-deferred)
+
 ;; **** Python ****
 (defun byronc/python-mode-settings ()
   (setenv "WORKON_HOME" "~/.pyenv/versions")
