@@ -272,6 +272,9 @@
 
 ;; **** OCaml ****
 (add-hook 'tuareg-mode-hook #'lsp-deferred)
+;; Disable super-save as it conflicts with formatting in OCaml when LSP is enabled.
+(add-to-list 'super-save-predicates
+             (lambda () (not (eq major-mode 'tuareg-mode))))
 
 ;; **** Python ****
 (defun byronc/python-mode-settings ()
