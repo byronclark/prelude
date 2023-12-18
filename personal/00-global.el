@@ -28,6 +28,7 @@
     pyvenv
     ripgrep
     terraform-mode
+    vertico-posframe
     wgrep
     yasnippet
     yasnippet-snippets))
@@ -131,6 +132,9 @@
 
 ;; consult and friends
 (setq consult-project-function (lambda (_) (projectile-project-root)))
+
+;; vertico and friends
+(vertico-posframe-mode 1)
 
 ;; *** Org Mode ***
 (setq

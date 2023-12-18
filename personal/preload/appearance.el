@@ -22,8 +22,8 @@
         (t . (semibold))))
 (setq modus-themes-mixed-fonts t)
 (setq modus-themes-italic-constructs t)
-(setq byronc/themes-to-toggle '(modus-operandi modus-vivendi))
-(setq prelude-theme 'modus-operandi)
+;; (setq byronc/themes-to-toggle '(modus-operandi modus-vivendi))
+;; (setq prelude-theme 'modus-operandi)
 
 (when (package-installed-p 'catppuccin-theme)
   (setq catppuccin-flavor 'macchiato)
