@@ -27,6 +27,7 @@
     python-black
     pyvenv
     ripgrep
+    spacious-padding
     terraform-mode
     vertico-posframe
     wgrep
@@ -79,6 +80,9 @@
   (fontaine-set-preset (or (fontaine-restore-latest-preset)
                            'regular))
   (add-hook 'kill-emacs-hook #'fontaine-store-latest-preset))
+
+;; Breathing room between windows
+(spacious-padding-mode 1)
 
 ;; Turn off scroll bars
 (scroll-bar-mode -1)
