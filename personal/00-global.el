@@ -233,7 +233,11 @@
                    :repo "zerolfx/copilot.el"
                    :branch "main"
                    :files ("dist" "*.el"))
-  :hook (prelude-prog-mode . copilot-mode)
+  :hook
+  (prelude-prog-mode . copilot-mode)
+  (copilot-mode . (lambda ()
+                    (setq-local copilot--indent-warning-printed-p t)))
+
   :bind (:map copilot-completion-map
               ("<tab>" . 'copilot-accept-completion)
               ("TAB" . 'copilot-accept-completion)
