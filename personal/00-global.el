@@ -231,7 +231,8 @@
 (use-package copilot
   :quelpa (copilot :fetcher github
                    :repo "zerolfx/copilot.el"
-                   :branch "main"
+                   ;;:branch "main"
+                   :commit "653fe7b" ; Before the broken 'cursor handling with smartparens
                    :files ("dist" "*.el"))
   :hook
   (prelude-prog-mode . copilot-mode)
