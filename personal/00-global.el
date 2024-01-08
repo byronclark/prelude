@@ -75,7 +75,7 @@
          :default-height 150
          :fixed-pitch-family "JetBrains Mono"
          :italic-slant italic)
-        (regular-berkeley
+        (macbook-berkeley
          :default-family "Berkeley Mono"
          :default-weight normal
          :default-height 150
