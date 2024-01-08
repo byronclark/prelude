@@ -46,15 +46,21 @@
       '((regular
          :default-family "Iosevka"
          :default-weight normal
-         :default-height 140
+         :default-height 150
          :fixed-pitch-family "Iosevka"
          :variable-pitch-family "Iosevka"
          :italic-slant italic)
         (regular-jetbrains
          :default-family "JetBrains Mono"
          :default-weight normal
-         :default-height 130
+         :default-height 140
          :fixed-pitch-family "JetBrains Mono"
+         :italic-slant italic)
+        (regular-berkeley
+         :default-family "Berkeley Mono"
+         :default-weight normal
+         :default-height 140
+         :fixed-pitch-family "Berkeley Mono"
          :italic-slant italic)
         (macbook
          :default-family "Iosevka"
@@ -68,6 +74,12 @@
          :default-weight normal
          :default-height 150
          :fixed-pitch-family "JetBrains Mono"
+         :italic-slant italic)
+        (regular-berkeley
+         :default-family "Berkeley Mono"
+         :default-weight normal
+         :default-height 150
+         :fixed-pitch-family "Berkeley Mono"
          :italic-slant italic)
         (shared
          :default-family "MonoLisa"
