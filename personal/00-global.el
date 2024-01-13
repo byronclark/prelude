@@ -242,14 +242,14 @@
 (require 'quelpa-use-package)
 (use-package copilot
   :quelpa (copilot :fetcher github
-                   :repo "zerolfx/copilot.el"
-                   ;;:branch "main"
-                   :commit "653fe7b" ; Before the broken 'cursor handling with smartparens
+                   :repo "copilot-emacs/copilot.el"
+                   :branch "main"
                    :files ("dist" "*.el"))
+  :custom
+  (copilot-indent-offset-warning-disable t)
+
   :hook
   (prelude-prog-mode . copilot-mode)
-  (copilot-mode . (lambda ()
-                    (setq-local copilot--indent-warning-printed-p t)))
 
   :bind (:map copilot-completion-map
               ("<tab>" . 'copilot-accept-completion)
