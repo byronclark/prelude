@@ -29,10 +29,10 @@
     ripgrep
     spacious-padding
     terraform-mode
-    vertico-posframe
     wgrep
     yasnippet
-    yasnippet-snippets))
+    yasnippet-snippets
+    zig-mode))
 
 (direnv-mode)
 (setq help-window-select t)
@@ -148,9 +148,6 @@
 
 ;; consult and friends
 (setq consult-project-function (lambda (_) (projectile-project-root)))
-
-;; vertico and friends
-(vertico-posframe-mode 1)
 
 ;; *** Org Mode ***
 (setq
@@ -316,6 +313,9 @@
 
 ;; **** Terraform ****
 (add-hook 'terraform-mode-hook #'lsp-deferred)
+
+;; **** Zig ****
+(add-hook 'zig-mode-hook #'lsp-deferred)
 
 
 ;; *** OS Specific Settings ***
