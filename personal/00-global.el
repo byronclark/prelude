@@ -125,6 +125,13 @@
 (setq lsp-headerline-breadcrumb-enable nil)
 (setq read-process-output-max (* 1024 1024)) ;; LSP responses can be large.
 
+;; Disable super-save in situations where it doesn't work well:
+;; - org-mode: spaces removed after every org-roam-node-insert
+;; - hexl-mode: saves the hexl format of the file
+(add-to-list
+ 'super-save-predicates
+ (lambda () (not (member major-mode '(org-mode hexl-mode)))))
+
 ;; whitespace-mode - only warn on longer lines
 (setq whitespace-line-column 120)
 (setq whitespace-style '(face tabs empty trailing lines-char))
@@ -228,12 +235,7 @@
 
 (add-hook 'prelude-org-mode-hook #'byronc/org-mode-settings t)
 
-;; Prevent poor interaction between consult-org-roam, prelude whitespace cleanup
-;; on save, and super-save. Otherwise we get to enter a space manually after
-;; each use of org-roam-node-insert outside of a capture buffer.
-;; The downside is that org buffers have to be saved explicitly.
-(add-to-list 'super-save-predicates
-             (lambda () (not (eq major-mode 'org-mode))))
+
 
 ;; *** Languages ***
 (require 'quelpa-use-package)
