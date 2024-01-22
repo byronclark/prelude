@@ -17,6 +17,7 @@
     fontaine
     jet
     lsp-pyright
+    logview
     mermaid-mode
     mood-line
     modus-themes
