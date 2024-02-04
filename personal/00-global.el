@@ -96,6 +96,11 @@
 
 ;; Breathing room between windows
 (spacious-padding-mode 1)
+;; The tab bar in pgtk builds of Emacs 29 gets occluded when there is
+;; an internal frame margin. Like the one added by spacious-padding.
+(when (and (version< emacs-version "30")
+           pgtk-initialized)
+  (tab-bar-mode -1))
 
 ;; Turn off scroll bars
 (scroll-bar-mode -1)
@@ -235,8 +240,6 @@
   (variable-pitch-mode))
 
 (add-hook 'prelude-org-mode-hook #'byronc/org-mode-settings t)
-
-
 
 ;; *** Languages ***
 (require 'quelpa-use-package)
