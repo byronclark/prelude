@@ -100,7 +100,7 @@
 ;; an internal frame margin. Like the one added by spacious-padding.
 (when (and (version< emacs-version "30")
            pgtk-initialized)
-  (tab-bar-mode -1))
+  (setopt tab-bar-show nil))
 
 ;; Turn off scroll bars
 (scroll-bar-mode -1)
