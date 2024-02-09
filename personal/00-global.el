@@ -10,6 +10,7 @@
     direnv
     eat
     ef-themes
+    elfeed
     embark
     embark-consult
     fennel-mode
@@ -240,6 +241,12 @@
   (variable-pitch-mode))
 
 (add-hook 'prelude-org-mode-hook #'byronc/org-mode-settings t)
+
+;; *** Content ***
+(global-set-key (kbd "C-x w") 'elfeed)
+(setq-default elfeed-search-filter "@2-months-ago +unread ")
+(setopt elfeed-sort-order 'ascending)
+(add-hook 'kill-emacs-hook #'elfeed-db-compact)
 
 ;; *** Languages ***
 (require 'quelpa-use-package)
