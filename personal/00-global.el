@@ -100,6 +100,7 @@
 ;; The tab bar in pgtk builds of Emacs 29 gets occluded when there is
 ;; an internal frame margin. Like the one added by spacious-padding.
 (when (and (version< emacs-version "30")
+           (boundp 'pgtk-initialized)
            pgtk-initialized)
   (setopt tab-bar-show nil))
 
