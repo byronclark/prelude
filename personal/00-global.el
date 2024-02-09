@@ -80,7 +80,7 @@
         (macbook-berkeley
          :default-family "Berkeley Mono"
          :default-weight normal
-         :default-height 150
+         :default-height 160
          :fixed-pitch-family "Berkeley Mono"
          :italic-slant italic)
         (shared

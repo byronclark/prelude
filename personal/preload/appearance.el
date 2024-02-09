@@ -11,8 +11,8 @@
           (3 . (semibold 1.1))
           (t . (semibold))))
   (setq ef-themes-mixed-fonts t)
-  ;; (setq ef-themes-to-toggle '(ef-trio-light ef-trio-dark))
-  ;; (setq prelude-theme 'ef-trio-light)
+  (setq ef-themes-to-toggle '(ef-trio-light ef-maris-dark))
+  (setq prelude-theme 'ef-trio-light)
   )
 
 (setq modus-themes-headings
@@ -22,7 +22,7 @@
         (t . (semibold))))
 (setq modus-themes-mixed-fonts t)
 (setq modus-themes-italic-constructs t)
-;; (setq byronc/themes-to-toggle '(modus-operandi modus-vivendi))
+(setq modus-themes-to-toggle '(modus-operandi modus-vivendi-tinted))
 ;; (setq prelude-theme 'modus-operandi)
 
 (when (package-installed-p 'catppuccin-theme)
@@ -30,7 +30,8 @@
   (setq catppuccin-highlight-matches t)
   (setq catppuccin-italic-comments t)
   (setq byronc/catppuccin-toggle-themes '(macchiato latte))
-  (setq prelude-theme 'catppuccin))
+  ;;(setq prelude-theme 'catppuccin)
+  )
 
 (defun byronc/-load-theme (theme)
   (disable-theme (car custom-enabled-themes))
