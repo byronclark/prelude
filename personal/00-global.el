@@ -276,11 +276,13 @@
 (add-hook 'prelude-prog-mode-hook #'byronc/prog-mode-settings t)
 
 ;; **** Clojure ****
-(setq cider-repl-display-help-banner nil)
-(setq cider-repl-display-in-current-window t)
-(setq cider-eldoc-display-for-symbol-at-point nil)
-(setq clojure-toplevel-inside-comment-form t)
-(setq cider-nbb-command "npx nbb")      ; Prefer project version of nbb.
+(setopt cider-offer-to-open-cljs-app-in-browser nil
+        cider-repl-display-help-banner nil
+        cider-repl-display-in-current-window t
+        cider-eldoc-display-for-symbol-at-point nil
+        clojure-toplevel-inside-comment-form t
+        cider-nbb-command "npx nbb"     ; Prefer project version of nbb.
+        )
 
 (add-hook 'clojure-mode-hook #'lsp-deferred)
 (add-hook 'clojurescript-mode-hook #'lsp-deferred)
