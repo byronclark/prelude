@@ -64,6 +64,12 @@
          :default-height 140
          :fixed-pitch-family "Berkeley Mono"
          :italic-slant italic)
+        (regular-victor
+         :default-family "Victor Mono"
+         :default-weight normal
+         :default-height 140
+         :fixed-pitch-family "Victor Mono"
+         :italic-slant italic)
         (macbook
          :default-family "Iosevka"
          :default-weight normal
@@ -82,6 +88,12 @@
          :default-weight normal
          :default-height 160
          :fixed-pitch-family "Berkeley Mono"
+         :italic-slant italic)
+        (macbook-victor
+         :default-family "Victor Mono"
+         :default-weight normal
+         :default-height 160
+         :fixed-pitch-family "Victor Mono"
          :italic-slant italic)
         (shared
          :default-family "MonoLisa"
@@ -308,11 +320,11 @@
 ;; **** Markdown ****
 (setq markdown-command "pandoc")
 
-;; **** OCaml ****
-(add-hook 'tuareg-mode-hook #'lsp-deferred)
-;; Disable super-save as it conflicts with formatting in OCaml when LSP is enabled.
-(add-to-list 'super-save-predicates
-             (lambda () (not (eq major-mode 'tuareg-mode))))
+;; ;; **** OCaml ****
+;; (add-hook 'tuareg-mode-hook #'lsp-deferred)
+;; ;; Disable super-save as it conflicts with formatting in OCaml when LSP is enabled.
+;; (add-to-list 'super-save-predicates
+;;              (lambda () (not (eq major-mode 'tuareg-mode))))
 
 ;; **** Python ****
 (defun byronc/python-mode-settings ()
