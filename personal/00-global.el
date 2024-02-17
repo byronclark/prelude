@@ -262,6 +262,7 @@
 (add-hook 'kill-emacs-hook #'elfeed-db-compact)
 
 ;; *** Languages ***
+(setq byronc/copilot-enabled nil) ;; Override in 99-local.el to use GitHub Copilot
 (require 'quelpa-use-package)
 (use-package copilot
   :quelpa (copilot :fetcher github
@@ -272,7 +273,9 @@
   (copilot-indent-offset-warning-disable t)
 
   :hook
-  (prelude-prog-mode . copilot-mode)
+  (prelude-prog-mode . (lambda () (when (and (boundp 'byronc/copilot-enabled)
+                                             'byronc/copilot-enabled)
+                                    (copilot-mode))))
 
   :bind (:map copilot-completion-map
               ("<tab>" . 'copilot-accept-completion)
