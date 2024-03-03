@@ -317,9 +317,6 @@
 (setq-default js-indent-level 2)
 (add-hook 'js-mode-hook #'lsp-deferred)
 
-;; **** GraphQL ****
-(setq-default graphql-indent-level 4)
-
 ;; **** Markdown ****
 (setq markdown-command "pandoc")
 
