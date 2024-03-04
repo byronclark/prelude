@@ -86,13 +86,13 @@
         (macbook-berkeley
          :default-family "Berkeley Mono"
          :default-weight normal
-         :default-height 160
+         :default-height 150
          :fixed-pitch-family "Berkeley Mono"
          :italic-slant italic)
         (macbook-victor
          :default-family "Victor Mono"
          :default-weight normal
-         :default-height 160
+         :default-height 150
          :fixed-pitch-family "Victor Mono"
          :italic-slant italic)
         (shared
