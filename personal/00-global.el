@@ -259,7 +259,8 @@
 (global-set-key (kbd "C-x w") 'elfeed)
 (setq-default elfeed-search-filter "@2-months-ago +unread ")
 (setopt elfeed-sort-order 'ascending)
-(add-hook 'kill-emacs-hook #'elfeed-db-compact)
+(add-hook 'kill-emacs-hook (lambda () (when (boundp #'elfeed-db-compact)
+                                        (#'elfeed-db-compact))))
 
 ;; *** Languages ***
 (setq byronc/copilot-enabled nil) ;; Override in 99-local.el to use GitHub Copilot
