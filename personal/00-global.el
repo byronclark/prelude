@@ -112,8 +112,7 @@
 ;; The tab bar in pgtk builds of Emacs 29 gets occluded when there is
 ;; an internal frame margin. Like the one added by spacious-padding.
 (when (and (version< emacs-version "30")
-           (boundp 'pgtk-initialized)
-           pgtk-initialized)
+           (bound-and-true-p pgtk-initialized))
   (setopt tab-bar-show nil))
 
 ;; Turn off scroll bars
@@ -259,14 +258,13 @@
 (global-set-key (kbd "C-x w") 'elfeed)
 (setq-default elfeed-search-filter "@2-months-ago +unread ")
 (setopt elfeed-sort-order 'ascending)
-(add-hook 'kill-emacs-hook (lambda () (when (boundp #'elfeed-db-compact)
-                                        (#'elfeed-db-compact))))
+(add-hook 'kill-emacs-hook (lambda () (when (fboundp 'elfeed-db-compact)
+                                        (elfeed-db-compact))))
 
 ;; *** Languages ***
 (require 'quelpa-use-package)
 ;; set byronc/copilot-enabled in preload to use copilot
-(when (and (boundp 'byronc/copilot-enabled)
-           'byronc/copilot-enabled)
+(when (bound-and-true-p byronc/copilot-enabled)
   (use-package copilot
     :quelpa (copilot :fetcher github
                      :repo "copilot-emacs/copilot.el"
