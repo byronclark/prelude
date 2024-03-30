@@ -263,28 +263,28 @@
                                         (#'elfeed-db-compact))))
 
 ;; *** Languages ***
-(setq byronc/copilot-enabled nil) ;; Override in 99-local.el to use GitHub Copilot
 (require 'quelpa-use-package)
-(use-package copilot
-  :quelpa (copilot :fetcher github
-                   :repo "copilot-emacs/copilot.el"
-                   :branch "main"
-                   :files ("dist" "*.el"))
-  :custom
-  (copilot-indent-offset-warning-disable t)
+;; set byronc/copilot-enabled in preload to use copilot
+(when (and (boundp 'byronc/copilot-enabled)
+           'byronc/copilot-enabled)
+  (use-package copilot
+    :quelpa (copilot :fetcher github
+                     :repo "copilot-emacs/copilot.el"
+                     :branch "main"
+                     :files ("dist" "*.el"))
+    :custom
+    (copilot-indent-offset-warning-disable t)
 
-  :hook
-  (prelude-prog-mode . (lambda () (when (and (boundp 'byronc/copilot-enabled)
-                                             'byronc/copilot-enabled)
-                                    (copilot-mode))))
+    :hook
+    (prelude-prog-mode . copilot-mode)
 
-  :bind (:map copilot-completion-map
-              ("<tab>" . 'copilot-accept-completion)
-              ("TAB" . 'copilot-accept-completion)
-              ("C-<tab>" . 'copilot-accept-completion-by-word)
-              ("C-TAB" . 'copilot-accept-completion-by-word)
-              ("M-n" . 'copilot-next-completion)
-              ("M-p" . 'copilot-previous-completion)))
+    :bind (:map copilot-completion-map
+                ("<tab>" . 'copilot-accept-completion)
+                ("TAB" . 'copilot-accept-completion)
+                ("C-<tab>" . 'copilot-accept-completion-by-word)
+                ("C-TAB" . 'copilot-accept-completion-by-word)
+                ("M-n" . 'copilot-next-completion)
+                ("M-p" . 'copilot-previous-completion))))
 
 (defun byronc/prog-mode-settings ()
   (setq fill-column 90))
