@@ -23,6 +23,7 @@
     mood-line
     modus-themes
     ob-mermaid
+    ob-restclient
     org-modern
     org-roam
     consult-org-roam
@@ -94,6 +95,12 @@
          :default-weight normal
          :default-height 150
          :fixed-pitch-family "Victor Mono"
+         :italic-slant italic)
+        (macbook-monolisa
+         :default-family "MonoLisa"
+         :default-weight normal
+         :default-height 140
+         :fixed-pitch-family "MonoLisa"
          :italic-slant italic)
         (shared
          :default-family "MonoLisa"
@@ -184,6 +191,10 @@
  org-special-ctrl-a/e t
  org-insert-heading-respect-content t
 
+ ;; Babel settings
+ org-src-preserve-indentation t
+ org-src-window-setup 'current-window
+
  ;; Org styling, hide markup etc.
  org-hide-emphasis-markers t
  org-pretty-entities t
@@ -192,6 +203,7 @@
  ;; Agenda styling
  org-agenda-tags-column 0
  org-agenda-block-separator ?─)
+
 (global-org-modern-mode)
 
 (setq org-directory "~/org")
@@ -219,7 +231,8 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((mermaid . t)
-   (python . t)))
+   (python . t)
+   (restclient . t)))
 
 (setq find-file-visit-truename t)
 (setq org-roam-dailies-directory "daily/")
