@@ -154,6 +154,7 @@
 (setq lsp-lens-enable nil)
 (setq lsp-headerline-breadcrumb-enable nil)
 (setq read-process-output-max (* 1024 1024)) ;; LSP responses can be large.
+(define-key lsp-mode-map (kbd "s-?") 'lsp-describe-thing-at-point)
 
 ;; Disable super-save in situations where it doesn't work well:
 ;; - org-mode: spaces removed after every org-roam-node-insert
