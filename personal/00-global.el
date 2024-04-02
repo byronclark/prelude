@@ -5,6 +5,7 @@
 (prelude-require-packages
  '(use-package
     quelpa-use-package
+    casual
     catppuccin-theme
     dimmer
     direnv
@@ -139,6 +140,9 @@
       '("[" invocation-name "] " (:eval (if (buffer-file-name)
                                             (abbreviate-file-name (buffer-file-name))
                                           "%b"))))
+
+;; calculator
+(define-key calc-mode-map (kbd "C-o") 'casual-main-menu)
 
 ;; dimmer
 (customize-set-variable 'dimmer-fraction 0.2)
