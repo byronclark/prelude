@@ -216,8 +216,7 @@
 (setq org-agenda-files (list "inbox.org"
                              "gtd.org"
                              "tickler.org"
-                             "habits.org"
-                             org-roam-directory))
+                             "habits.org"))
 (setq org-refile-targets '(("gtd.org" :maxlevel . 2)
                            ("someday.org" :level . 1)
                            ("tickler.org" :maxlevel . 2)))
@@ -252,7 +251,7 @@
   (setq org-roam-database-connector 'sqlite-builtin))
 
 (org-roam-db-autosync-enable)
-(setq consult-org-roam-grep-func #'consult-ripgrep)
+(setopt consult-org-roam-grep-func #'consult-ripgrep)
 (consult-org-roam-mode 1)
 
 (global-set-key (kbd "C-c n f") 'consult-org-roam-file-find)
