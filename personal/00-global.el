@@ -312,8 +312,10 @@
         cider-repl-display-in-current-window t
         cider-eldoc-display-for-symbol-at-point nil
         clojure-toplevel-inside-comment-form t
-        cider-nbb-command "npx nbb"     ; Prefer project version of nbb.
+        cider-nbb-command "npx nbb"     ;Prefer project version of nbb.
         )
+
+(add-to-list 'auto-mode-alist '("\\.fiddle\\'" . clojure-mode)) ;[Calva fiddle files](https://calva.io/fiddle-files/)
 
 (add-hook 'clojure-mode-hook #'lsp-deferred)
 (add-hook 'clojurescript-mode-hook #'lsp-deferred)
