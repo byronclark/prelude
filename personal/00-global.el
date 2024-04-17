@@ -48,30 +48,20 @@
 
 (setq fontaine-presets
       '((regular
-         :default-family "Iosevka"
-         :default-weight normal
-         :default-height 150
-         :fixed-pitch-family "Iosevka"
-         :variable-pitch-family "Iosevka"
-         :italic-slant italic)
-        (regular-jetbrains
-         :default-family "JetBrains Mono"
-         :default-weight normal
-         :default-height 140
-         :fixed-pitch-family "JetBrains Mono"
-         :italic-slant italic)
-        (regular-berkeley
-         :default-family "Berkeley Mono"
-         :default-weight normal
-         :default-height 140
-         :fixed-pitch-family "Berkeley Mono"
-         :italic-slant italic)
-        (regular-victor
          :default-family "Victor Mono"
          :default-weight normal
          :default-height 140
-         :fixed-pitch-family "Victor Mono"
+         :variable-pitch-family "Victor Mono"
          :italic-slant italic)
+        (regular-jetbrains
+         :inherit regular
+         :default-family "JetBrains Mono")
+        (regular-berkeley
+         :inherit regular
+         :default-family "Berkeley Mono")
+        (regular-shared
+         :inherit regular
+         :default-height 180)
         (macbook
          :default-family "Iosevka"
          :default-weight normal
@@ -113,7 +103,7 @@
   ;; Fonts only work in graphics mode.
   (fontaine-set-preset (or (fontaine-restore-latest-preset)
                            'regular))
-  (add-hook 'kill-emacs-hook #'fontaine-store-latest-preset))
+  (fontaine-mode 1))
 
 ;; Breathing room between windows
 (spacious-padding-mode 1)
@@ -266,8 +256,7 @@
   (define-key org-mode-map (kbd "C-c n r") 'org-roam-refile)
   (auto-fill-mode -1)
   (whitespace-mode -1)
-  (visual-line-mode)
-  (variable-pitch-mode))
+  (visual-line-mode))
 
 (add-hook 'prelude-org-mode-hook #'byronc/org-mode-settings t)
 
