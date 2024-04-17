@@ -63,41 +63,20 @@
          :inherit regular
          :default-height 180)
         (macbook
-         :default-family "Iosevka"
-         :default-weight normal
-         :default-height 160
-         :fixed-pitch-family "Iosevka"
-         :variable-pitch-family "Iosevka"
-         :italic-slant italic)
-        (macbook-jetbrains
-         :default-family "JetBrains Mono"
-         :default-weight normal
-         :default-height 150
-         :fixed-pitch-family "JetBrains Mono"
-         :italic-slant italic)
-        (macbook-berkeley
-         :default-family "Berkeley Mono"
-         :default-weight normal
-         :default-height 150
-         :fixed-pitch-family "Berkeley Mono"
-         :italic-slant italic)
-        (macbook-victor
          :default-family "Victor Mono"
          :default-weight normal
          :default-height 150
-         :fixed-pitch-family "Victor Mono"
+         :variable-pitch-family "Victor Mono"
          :italic-slant italic)
-        (macbook-monolisa
-         :default-family "MonoLisa"
-         :default-weight normal
-         :default-height 140
-         :fixed-pitch-family "MonoLisa"
-         :italic-slant italic)
-        (shared
-         :default-family "MonoLisa"
-         :default-weight normal
-         :default-height 190
-         :italic-slant italic)))
+        (macbook-jetbrains
+         :inherit macbook
+         :default-family "JetBrains Mono")
+        (macbook-berkeley
+         :inherit macbook
+         :default-family "Berkeley Mono")
+        (macbook-shared
+         :inherit macbook
+         :default-height 190)))
 
 (when (display-graphic-p)
   ;; Fonts only work in graphics mode.
