@@ -303,6 +303,20 @@
           (lambda ()
             (remove-hook 'completion-at-point-functions #'cider-complete-at-point)))
 
+;; cider portal integration (see https://cljdoc.org/d/djblue/portal/0.55.1/doc/editors/emacs#cider)
+(defun portal.api/open ()
+  (interactive)
+  (cider-nrepl-sync-request:eval
+   "(do (ns dev) (def portal ((requiring-resolve 'portal.api/open) {:launcher :emacs})) (add-tap (requiring-resolve 'portal.api/submit)))"))
+
+(defun portal.api/clear ()
+  (interactive)
+  (cider-nrepl-sync-request:eval "(portal.api/clear)"))
+
+(defun portal.api/close ()
+  (interactive)
+  (cider-nrepl-sync-request:eval "(portal.api/close)"))
+
 ;; **** Fennel ****
 (add-to-list 'auto-mode-alist '("\\.fnl\\'" . fennel-mode))
 
