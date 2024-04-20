@@ -51,14 +51,19 @@
          :default-family "Victor Mono"
          :default-weight normal
          :default-height 140
+         :fixed-pitch-family "Victor Mono"
          :variable-pitch-family "Victor Mono"
          :italic-slant italic)
         (regular-jetbrains
          :inherit regular
-         :default-family "JetBrains Mono")
+         :default-family "JetBrains Mono"
+         :fixed-pitch-family "JetBrains Mono"
+         :variable-pitch-family "JetBrains Mono")
         (regular-berkeley
          :inherit regular
-         :default-family "Berkeley Mono")
+         :default-family "Berkeley Mono"
+         :fixed-pitch-family "Berkeley Mono"
+         :variable-pitch-family "Berkeley Mono")
         (regular-shared
          :inherit regular
          :default-height 180)
@@ -66,14 +71,19 @@
          :default-family "Victor Mono"
          :default-weight normal
          :default-height 150
+         :fixed-pitch-family "Victor Mono"
          :variable-pitch-family "Victor Mono"
          :italic-slant italic)
         (macbook-jetbrains
          :inherit macbook
-         :default-family "JetBrains Mono")
+         :default-family "JetBrains Mono"
+         :fixed-pitch-family "JetBrains Mono"
+         :variable-pitch-family "JetBrains Mono")
         (macbook-berkeley
          :inherit macbook
-         :default-family "Berkeley Mono")
+         :default-family "Berkeley Mono"
+         :fixed-pitch-family "Berkeley Mono"
+         :variable-pitch-family "Berkeley Mono")
         (macbook-shared
          :inherit macbook
          :default-height 190)))
