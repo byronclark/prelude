@@ -24,7 +24,6 @@
     mood-line
     modus-themes
     ob-mermaid
-    ob-restclient
     org-modern
     org-roam
     consult-org-roam
@@ -33,6 +32,7 @@
     ripgrep
     spacious-padding
     terraform-mode
+    verb
     wgrep
     yasnippet
     yasnippet-snippets
@@ -214,8 +214,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((mermaid . t)
-   (python . t)
-   (restclient . t)))
+   (python . t)))
 
 (setq find-file-visit-truename t)
 (setq org-roam-dailies-directory "daily/")
@@ -246,6 +245,9 @@
   (auto-fill-mode -1)
   (whitespace-mode -1)
   (visual-line-mode))
+
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "C-c C-r") verb-command-map))
 
 (add-hook 'prelude-org-mode-hook #'byronc/org-mode-settings t)
 
