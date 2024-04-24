@@ -157,6 +157,9 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
+;; magit
+(setopt magit-list-refs-sortby "-creatordate")
+
 ;; projectile
 (setq projectile-create-missing-test-files t)
 
