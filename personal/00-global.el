@@ -148,8 +148,6 @@
 
 ;; use a posix shell for commands
 (setq shell-file-name "bash")
-;; and fish everywhere else
-(setq explicit-shell-file-name "fish")
 
 ;; utf-8 everywhere
 (prefer-coding-system 'utf-8)

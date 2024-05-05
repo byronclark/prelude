@@ -11,8 +11,8 @@
           (3 . (semibold 1.1))
           (t . (semibold))))
   (setq ef-themes-mixed-fonts t)
-  (setq ef-themes-to-toggle '(ef-trio-light ef-maris-dark))
-  ;; (setq prelude-theme 'ef-trio-light)
+  (setq ef-themes-to-toggle '(ef-maris-light ef-maris-dark))
+  (setq prelude-theme 'ef-maris-dark)
   )
 
 (setq modus-themes-headings
@@ -23,7 +23,7 @@
 (setq modus-themes-mixed-fonts t)
 (setq modus-themes-italic-constructs t)
 (setq modus-themes-to-toggle '(modus-operandi-tinted modus-vivendi-tinted))
-(setq prelude-theme 'modus-operandi-tinted)
+;; (setq prelude-theme 'modus-operandi-tinted)
 
 (when (package-installed-p 'catppuccin-theme)
   (setq catppuccin-flavor 'macchiato)
