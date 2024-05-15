@@ -50,7 +50,7 @@
 (setq fontaine-presets
       '((regular
          :default-family "Victor Mono"
-         :default-weight normal
+         :default-weight medium
          :default-height 140
          :fixed-pitch-family "Victor Mono"
          :variable-pitch-family "Victor Mono"
