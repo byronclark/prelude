@@ -17,6 +17,7 @@
     fennel-mode
     fish-mode
     fontaine
+    gptel
     jet
     lsp-pyright
     logview
@@ -258,6 +259,14 @@
 (setopt elfeed-sort-order 'ascending)
 (add-hook 'kill-emacs-hook (lambda () (when (fboundp 'elfeed-db-compact)
                                         (elfeed-db-compact))))
+
+(setopt
+ gptel-model   "llama3"
+ gptel-backend (gptel-make-openai "llamafile-llama3"
+                 :stream t
+                 :protocol "http"
+                 :host "localhost:8080"
+                 :models '("llama3")))
 
 ;; *** Languages ***
 (require 'quelpa-use-package)
