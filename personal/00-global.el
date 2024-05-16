@@ -260,6 +260,10 @@
 (add-hook 'kill-emacs-hook (lambda () (when (fboundp 'elfeed-db-compact)
                                         (elfeed-db-compact))))
 
+;;See https://github.com/karthink/gptel/issues/227
+(when (not (boundp 'gptel--known-backends))
+  (defvar gptel--known-backends nil))
+
 (setopt
  gptel-model   "llama3"
  gptel-backend (gptel-make-openai "llamafile-llama3"
