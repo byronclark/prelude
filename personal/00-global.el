@@ -17,7 +17,6 @@
     fennel-mode
     fish-mode
     fontaine
-    gptel
     jet
     lsp-pyright
     logview
@@ -38,6 +37,9 @@
     yasnippet
     yasnippet-snippets
     zig-mode))
+
+(setq auth-sources
+      '((:source "~/.emacs.d/personal/secrets/.authinfo.gpg")))
 
 (direnv-mode)
 (setq help-window-select t)
@@ -260,17 +262,21 @@
 (add-hook 'kill-emacs-hook (lambda () (when (fboundp 'elfeed-db-compact)
                                         (elfeed-db-compact))))
 
-;;See https://github.com/karthink/gptel/issues/227
-(when (not (boundp 'gptel--known-backends))
-  (defvar gptel--known-backends nil))
-
-(setopt
- gptel-model   "llama3"
- gptel-backend (gptel-make-openai "llamafile-llama3"
-                 :stream t
-                 :protocol "http"
-                 :host "localhost:8080"
-                 :models '("llama3")))
+(use-package ellama
+  :ensure t
+  :init
+  (setopt ellama-keymap-prefix "C-c m")
+  (require 'llm-claude)
+  (setopt ellama-provider (make-llm-claude
+                           :key (auth-source-pick-first-password :host "claude.api")
+                           :chat-model "claude-3-sonnet-20240229")
+          ellama-providers
+          '(("claude" . (make-llm-claude
+                         :key (auth-source-pick-first-password :host "claude.api")
+                         :chat-model "claude-3-sonnet-20240229"))
+            ("openai" . (make-llm-openai
+                         :key (auth-source-pick-first-password :host "openai.api")
+                         :chat-model "gpt-4o")))))
 
 ;; *** Languages ***
 (require 'quelpa-use-package)
