@@ -271,10 +271,7 @@
                            :key (auth-source-pick-first-password :host "claude.api")
                            :chat-model "claude-3-sonnet-20240229")
           ellama-providers
-          '(("claude" . (make-llm-claude
-                         :key (auth-source-pick-first-password :host "claude.api")
-                         :chat-model "claude-3-sonnet-20240229"))
-            ("openai" . (make-llm-openai
+          '(("openai" . (make-llm-openai
                          :key (auth-source-pick-first-password :host "openai.api")
                          :chat-model "gpt-4o")))))
 
