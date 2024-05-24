@@ -265,10 +265,10 @@
 (use-package ellama
   :ensure t
   :init
-  (setopt ellama-keymap-prefix "C-c m")
   (require 'llm-claude)
   (require 'llm-openai)
-  (setopt ellama-keymap-prefix "C-c m"
+  (setopt llm-warn-on-nonfree nil
+          ellama-keymap-prefix "C-c m"
           ellama-sessions-directory (expand-file-name "~/org/ellama-sessions")
           ellama-provider (make-llm-claude
                            :key (auth-source-pick-first-password :host "claude.api")
