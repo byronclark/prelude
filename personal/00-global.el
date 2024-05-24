@@ -268,7 +268,9 @@
   (setopt ellama-keymap-prefix "C-c m")
   (require 'llm-claude)
   (require 'llm-openai)
-  (setopt ellama-provider (make-llm-claude
+  (setopt ellama-keymap-prefix "C-c m"
+          ellama-sessions-directory (expand-file-name "~/org/ellama-sessions")
+          ellama-provider (make-llm-claude
                            :key (auth-source-pick-first-password :host "claude.api")
                            :chat-model "claude-3-sonnet-20240229")
           ellama-providers
