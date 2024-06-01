@@ -122,6 +122,20 @@
 (customize-set-variable 'dimmer-use-colorspace :rgb)
 (dimmer-mode +1)
 
+;; Spell checking with jinx
+(setopt prelude-flyspell nil)
+(use-package jinx
+  :ensure t
+  :after (vertico)
+  :hook (emacs-startup . global-jinx-mode)
+  :bind (("M-$" . jinx-correct)
+         ("C-M-$" . jinx-languages))
+  :config (add-to-list 'vertico-multiform-categories
+                       '(jinx grid (vertico-grid-annotate . 20))))
+
+(vertico-multiform-mode 1)
+
+
 ;; lsp-mode
 (setq lsp-lens-enable nil)
 (setq lsp-headerline-breadcrumb-enable nil)
