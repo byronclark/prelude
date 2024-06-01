@@ -12,7 +12,7 @@
           (t . (semibold))))
   (setq ef-themes-mixed-fonts t)
   (setq ef-themes-to-toggle '(ef-maris-light ef-maris-dark))
-  ;; (setq prelude-theme 'ef-maris-dark)
+  (setq prelude-theme 'ef-maris-dark)
   )
 
 (setq modus-themes-headings
@@ -30,7 +30,7 @@
   (setq catppuccin-highlight-matches t)
   (setq catppuccin-italic-comments t)
   (setq byronc/catppuccin-toggle-themes '(macchiato latte))
-  (setq prelude-theme 'catppuccin)
+  ;; (setq prelude-theme 'catppuccin)
   )
 
 (defun byronc/-load-theme (theme)

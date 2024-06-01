@@ -57,11 +57,6 @@
          :fixed-pitch-family "Victor Mono"
          :variable-pitch-family "Victor Mono"
          :italic-slant italic)
-        (regular-jetbrains
-         :inherit regular
-         :default-family "JetBrains Mono"
-         :fixed-pitch-family "JetBrains Mono"
-         :variable-pitch-family "JetBrains Mono")
         (regular-berkeley
          :inherit regular
          :default-family "Berkeley Mono"
@@ -77,11 +72,6 @@
          :fixed-pitch-family "Victor Mono"
          :variable-pitch-family "Victor Mono"
          :italic-slant italic)
-        (macbook-jetbrains
-         :inherit macbook
-         :default-family "JetBrains Mono"
-         :fixed-pitch-family "JetBrains Mono"
-         :variable-pitch-family "JetBrains Mono")
         (macbook-berkeley
          :inherit macbook
          :default-family "Berkeley Mono"
