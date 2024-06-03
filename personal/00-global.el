@@ -411,3 +411,5 @@
 (define-key prelude-mode-map (kbd "C-c t") nil) ; Replaced with eat
 (global-set-key (kbd "C-c t") 'eat-project-other-window)
 (global-set-key (kbd "C-c *") 'isearch-forward-thing-at-point)
+(global-set-key (kbd "C-:") 'avy-goto-char-timer)
+(global-set-key (kbd "M-g l") 'avy-goto-line)
