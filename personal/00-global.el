@@ -214,6 +214,16 @@
                               ("T" "Tickler" entry
                                (file+headline "tickler.org" "Tickler")
                                "* %i%? \n %U")))
+(setopt org-roam-capture-templates
+        '(("d" "default" plain "%?"
+           :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}
+")
+           :unnarrowed t)
+          ("b" "book notes" plain
+           "\n\n- tags :: \n- author :: \n- series :: \n\n* Summary\n\n%?"
+           :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}
+")
+           :unnarrowed t)))
 
 (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w@/!)" "|" "DONE(d!)" "CANCELLED(c@)")))
 
