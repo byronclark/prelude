@@ -5,7 +5,7 @@
 (prelude-require-packages
  '(use-package
     quelpa-use-package
-    casual
+    casual-calc
     catppuccin-theme
     dimmer
     direnv
@@ -114,7 +114,7 @@
                                           "%b"))))
 
 ;; calculator
-(define-key calc-mode-map (kbd "C-o") 'casual-main-menu)
+(define-key calc-mode-map (kbd "C-o") 'casual-calc-tmenu)
 
 ;; dimmer
 (customize-set-variable 'dimmer-fraction 0.2)
