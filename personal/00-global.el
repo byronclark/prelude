@@ -305,7 +305,9 @@
     (copilot-indent-offset-warning-disable t)
 
     :hook
-    (prelude-prog-mode . copilot-mode)
+    (prelude-prog-mode . (lambda ()
+                           (unless (string-prefix-p "*temp*-" (buffer-name))
+                             (copilot-mode))))
 
     :bind (:map copilot-completion-map
                 ("<tab>" . 'copilot-accept-completion)
