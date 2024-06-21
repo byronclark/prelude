@@ -286,7 +286,7 @@
           ellama-sessions-directory (expand-file-name "~/org/ellama-sessions")
           ellama-provider (make-llm-claude
                            :key (auth-source-pick-first-password :host "claude.api")
-                           :chat-model "claude-3-sonnet-20240229")
+                           :chat-model "claude-3-5-sonnet-20240620")
           ellama-providers
           '(("openai" . (make-llm-openai
                          :key (auth-source-pick-first-password :host "openai.api")
