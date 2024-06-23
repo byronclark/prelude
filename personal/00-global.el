@@ -173,6 +173,7 @@
 
 ;; consult and friends
 (setq consult-project-function (lambda (_) (projectile-project-root)))
+(consult-customize consult-ripgrep :initial (thing-at-point 'symbol))
 
 ;; *** Org Mode ***
 (setq
