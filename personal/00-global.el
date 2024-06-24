@@ -173,7 +173,15 @@
 
 ;; consult and friends
 (setq consult-project-function (lambda (_) (projectile-project-root)))
-(consult-customize consult-ripgrep :initial (thing-at-point 'symbol))
+(with-eval-after-load 'consult
+  (consult-customize consult-ripgrep :initial (thing-at-point 'symbol)))
+
+(defun byronc/projectile-ripgrep ()
+  (interactive)
+  (consult-ripgrep (projectile-project-root)))
+
+(with-eval-after-load 'projectile
+  (define-key projectile-mode-map (kbd "C-c p s r") #'byronc/projectile-ripgrep))
 
 ;; *** Org Mode ***
 (setq
