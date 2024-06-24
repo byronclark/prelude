@@ -178,7 +178,7 @@
 
 (defun byronc/projectile-ripgrep ()
   (interactive)
-  (consult-ripgrep (projectile-project-root)))
+  (consult-ripgrep (projectile-project-root) (thing-at-point 'symbol)))
 
 (with-eval-after-load 'projectile
   (define-key projectile-mode-map (kbd "C-c p s r") #'byronc/projectile-ripgrep))
