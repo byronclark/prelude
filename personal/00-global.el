@@ -113,6 +113,23 @@
                                             (abbreviate-file-name (buffer-file-name))
                                           "%b"))))
 
+(setopt display-buffer-base-action
+        '((display-buffer-reuse-window display-buffer-same-window)
+          (reusable-frames . t))
+        even-window-sizes nil)
+
+(use-package perspective
+  :ensure t
+  :after (consult)
+  :custom
+  (persp-mode-prefix-key (kbd "C-x x"))
+  (persp-modestring-short t)
+  (persp-initial-frame-name "plan")
+  :config
+  (consult-customize consult--source-buffer :hidden t :default nil)
+  (add-to-list 'consult-buffer-sources persp-consult-source)
+  :init (persp-mode))
+
 ;; calculator
 (define-key calc-mode-map (kbd "C-o") 'casual-calc-tmenu)
 
@@ -315,7 +332,7 @@
 
     :hook
     (prelude-prog-mode . (lambda ()
-                           (unless (string-prefix-p "*temp*-" (buffer-name))
+                           (unless (string-prefix-p " *temp*-" (buffer-name))
                              (copilot-mode))))
 
     :bind (:map copilot-completion-map
@@ -432,5 +449,5 @@
 (define-key prelude-mode-map (kbd "C-c t") nil) ; Replaced with eat
 (global-set-key (kbd "C-c t") 'eat-project-other-window)
 (global-set-key (kbd "C-c *") 'isearch-forward-thing-at-point)
-(global-set-key (kbd "C-:") 'avy-goto-char-timer)
+(global-set-key (kbd "s-,") 'avy-goto-char-timer)
 (global-set-key (kbd "M-g l") 'avy-goto-line)
