@@ -67,16 +67,15 @@
          :default-height 180)
         (macbook
          :default-family "Victor Mono"
-         :default-weight normal
          :default-height 150
          :fixed-pitch-family "Victor Mono"
-         :variable-pitch-family "Victor Mono"
+         :variable-pitch-family "Inter"
+         :variable-pitch-height 160
          :italic-slant italic)
         (macbook-berkeley
          :inherit macbook
          :default-family "Berkeley Mono"
-         :fixed-pitch-family "Berkeley Mono"
-         :variable-pitch-family "Berkeley Mono")
+         :fixed-pitch-family "Berkeley Mono")
         (macbook-shared
          :inherit macbook
          :default-height 190)))
@@ -288,8 +287,10 @@
   (define-key org-mode-map (kbd "C-c n r") 'org-roam-refile)
   (auto-fill-mode -1)
   (whitespace-mode -1)
-  (visual-line-mode))
+  (visual-line-mode)
+  (variable-pitch-mode))
 
+(setopt verb-auto-kill-response-buffers t)
 (with-eval-after-load 'org
   (define-key org-mode-map (kbd "C-c C-r") verb-command-map))
 
