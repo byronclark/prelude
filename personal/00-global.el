@@ -200,6 +200,27 @@
 (with-eval-after-load 'projectile
   (define-key projectile-mode-map (kbd "C-c p s r") #'byronc/projectile-ripgrep))
 
+(defun byronc/install-missing-docsets (docsets)
+  "Install dash docsets from the given list that are not already installed."
+  (let* ((installed-docsets (dash-docs-installed-docsets))
+         (missing-docsets (cl-set-difference docsets installed-docsets :test #'string=)))
+    (if missing-docsets
+        (progn
+          (message "Installing missing docsets: %s" missing-docsets)
+          (dolist (docset missing-docsets)
+            (message "Installing %s..." docset)
+            (dash-docs-install-docset docset))))))
+
+(use-package consult-dash
+  :ensure t
+  :custom
+  (dash-docs-browser-func #'eww)
+  :config
+  (consult-customize consult-dash :initial (thing-at-point 'symbol))
+  (byronc/install-missing-docsets '("Clojure" "Python 3" "HTML" "JavaScript"))
+  :init
+  (setq dash-docs-common-docsets '("HTML" "JavaScript")))
+
 ;; *** Org Mode ***
 (setq
  ;; Edit settings
@@ -361,9 +382,11 @@
 
 (add-to-list 'auto-mode-alist '("\\.fiddle\\'" . clojure-mode)) ;[Calva fiddle files](https://calva.io/fiddle-files/)
 
-(add-hook 'clojure-mode-hook #'lsp-deferred)
-(add-hook 'clojurescript-mode-hook #'lsp-deferred)
-(add-hook 'clojurec-mode-hook #'lsp-deferred)
+(defun byronc/clojure-mode-settings ()
+  (lsp-deferred)
+  (setq-local consult-dash-docsets '("Clojure")))
+
+(add-hook 'clojure-mode-hook #'byronc/clojure-mode-settings)
 
 (add-hook 'cider-mode-hook
           (lambda ()
@@ -408,7 +431,8 @@
   (pyvenv-mode)
   (require 'lsp-pyright)
   (lsp-deferred)
-  (python-black-on-save-mode-enable-dwim))
+  (python-black-on-save-mode-enable-dwim)
+  (setq-local consult-dash-docsets '("Python 3")))
 
 (add-hook 'python-mode-hook #'byronc/python-mode-settings)
 
