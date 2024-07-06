@@ -55,7 +55,8 @@
          :default-weight medium
          :default-height 140
          :fixed-pitch-family "Victor Mono"
-         :variable-pitch-family "Victor Mono"
+         :variable-pitch-family "Inter"
+         :variable-pitch-weight normal
          :italic-slant italic)
         (regular-berkeley
          :inherit regular
