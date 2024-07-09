@@ -71,7 +71,7 @@
          :default-height 150
          :fixed-pitch-family "Victor Mono"
          :variable-pitch-family "Inter"
-         :variable-pitch-height 160
+         :variable-pitch-height 1.1
          :italic-slant italic)
         (macbook-berkeley
          :inherit macbook
@@ -200,24 +200,15 @@
 (with-eval-after-load 'projectile
   (define-key projectile-mode-map (kbd "C-c p s r") #'byronc/projectile-ripgrep))
 
-(defun byronc/install-missing-docsets (docsets)
-  "Install dash docsets from the given list that are not already installed."
-  (let* ((installed-docsets (dash-docs-installed-docsets))
-         (missing-docsets (cl-set-difference docsets installed-docsets :test #'string=)))
-    (if missing-docsets
-        (progn
-          (message "Installing missing docsets: %s" missing-docsets)
-          (dolist (docset missing-docsets)
-            (message "Installing %s..." docset)
-            (dash-docs-install-docset docset))))))
-
 (use-package consult-dash
   :ensure t
   :custom
   (dash-docs-browser-func #'eww)
   :config
   (consult-customize consult-dash :initial (thing-at-point 'symbol))
-  (byronc/install-missing-docsets '("Clojure" "Python 3" "HTML" "JavaScript"))
+  (dash-docs--ensure-created-docsets-path (dash-docs-docsets-path))
+  (dolist (docset '("Clojure" "Python_3" "HTML" "JavaScript"))
+    (dash-docs-ensure-docset-installed docset))
   :init
   (setq dash-docs-common-docsets '("HTML" "JavaScript")))
 
