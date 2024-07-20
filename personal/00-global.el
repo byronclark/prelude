@@ -69,10 +69,22 @@
         (macbook
          :default-family "Victor Mono"
          :default-height 150
+         :default-weight normal
          :fixed-pitch-family "Victor Mono"
          :variable-pitch-family "Inter"
-         :variable-pitch-height 1.1
+         :variable-pitch-height 1.0
          :italic-slant italic)
+        (macbook-cascadia
+         :inherit macbook
+         :default-family "Cascadia Code"
+         :default-height 160
+         :fixed-pitch-family "Cascadia Code"
+         :variable-pitch-height 1.0)
+        (macbook-iosevka
+         :inherit macbook
+         :default-family "Iosevka"
+         :default-height 170
+         :fixed-pitch-family "Iosevka")
         (macbook-berkeley
          :inherit macbook
          :default-family "Berkeley Mono"
