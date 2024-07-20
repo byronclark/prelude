@@ -343,6 +343,7 @@
                      :files ("dist" "*.el"))
     :custom
     (copilot-indent-offset-warning-disable t)
+    (copilot-indentation-alist nil)     ;Work around an editorconfig and copilot conflict
 
     :hook
     (prelude-prog-mode . (lambda ()
