@@ -62,7 +62,16 @@
          :inherit regular
          :default-family "Berkeley Mono"
          :fixed-pitch-family "Berkeley Mono"
-         :variable-pitch-family "Berkeley Mono")
+         :variable-pitch-family "Inter")
+        (regular-iosevka
+         :inherit regular
+         :default-family "Iosevka"
+         :default-weight normal
+         :default-height 150
+         :fixed-pitch-family "Iosevka"
+         :variable-pitch-family "Inter"
+         :variable-pitch-weight normal
+         :italic-slant italic)
         (regular-shared
          :inherit regular
          :default-height 180)
