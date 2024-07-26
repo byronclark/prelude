@@ -234,7 +234,7 @@
   (setq dash-docs-common-docsets '("HTML" "JavaScript")))
 
 ;; *** Org Mode ***
-(setq
+(setopt
  ;; Edit settings
  org-auto-align-tags nil
  org-tags-column 0
@@ -253,7 +253,10 @@
 
  ;; Agenda styling
  org-agenda-tags-column 0
- org-agenda-block-separator ?─)
+ org-agenda-block-separator ?─
+
+ ;; org-modern checkboxes only work well with iosevka fonts
+ org-modern-checkbox nil)
 
 (global-org-modern-mode)
 
@@ -364,7 +367,6 @@
                      :files ("dist" "*.el"))
     :custom
     (copilot-indent-offset-warning-disable t)
-    (copilot-indentation-alist nil)     ;Work around an editorconfig and copilot conflict
 
     :hook
     (prelude-prog-mode . (lambda ()
