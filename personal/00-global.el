@@ -49,63 +49,67 @@
 (custom-set-faces
  '(italic ((t (:slant italic)))))
 
-(setq fontaine-presets
-      '((regular
-         :default-family "Victor Mono"
-         :default-weight medium
-         :default-height 140
-         :fixed-pitch-family "Victor Mono"
-         :variable-pitch-family "Inter"
-         :variable-pitch-weight normal
-         :italic-slant italic)
-        (regular-berkeley
-         :inherit regular
-         :default-family "Berkeley Mono"
-         :fixed-pitch-family "Berkeley Mono"
-         :variable-pitch-family "Inter")
-        (regular-iosevka
-         :inherit regular
-         :default-family "Iosevka"
-         :default-weight normal
-         :default-height 150
-         :fixed-pitch-family "Iosevka"
-         :variable-pitch-family "Inter"
-         :variable-pitch-weight normal
-         :italic-slant italic)
-        (regular-shared
-         :inherit regular
-         :default-height 180)
-        (macbook
-         :default-family "Victor Mono"
-         :default-height 150
-         :fixed-pitch-family "Victor Mono"
-         :variable-pitch-family "Inter"
-         :variable-pitch-height 1.1
-         :italic-slant italic)
-        (macbook-cascadia
-         :default-family "Cascadia Code"
-         :default-height 160
-         :fixed-pitch-family "Cascadia Code"
-         :variable-pitch-family "Inter"
-         :variable-pitch-height 1.0
-         :italic-slant italic)
-        (macbook-iosevka
-         :default-family "Iosevka"
-         :default-height 160
-         :fixed-pitch-family "Iosevka"
-         :variable-pitch-family "Iosevka Aile"
-         :variable-pitch-height 1.0
-         :italic-slant italic)
-        (macbook-berkeley
-         :default-family "Berkeley Mono"
-         :default-height 150
-         :fixed-pitch-family "Berkeley Mono"
-         :variable-pitch-family "Inter"
-         :variable-pitch-height 1.1
-         :italic-slant italic)
-        (macbook-shared
-         :inherit macbook
-         :default-height 190)))
+(setopt fontaine-presets
+        '((regular
+           :default-family "Victor Mono"
+           :default-height 140
+           :fixed-pitch-family "Victor Mono"
+           :variable-pitch-family "Inter"
+           :italic-slant italic)
+          (regular-berkeley
+           :default-family "Berkeley Mono"
+           :default-height 140
+           :default-weight regular
+           :fixed-pitch-family "Berkeley Mono"
+           :variable-pitch-family "Inter"
+           :italic-slant italic)
+          (regular-iosevka
+           :default-family "Iosevka"
+           :default-height 150
+           :fixed-pitch-family "Iosevka"
+           :variable-pitch-family "Iosevka Aile"
+           :italic-slant italic)
+          (regular-cascadia
+           :default-family "Cascadia Code"
+           :default-weight regular
+           :default-height 140
+           :fixed-pitch-family "Cascadia Code"
+           :variable-pitch-family "Inter"
+           :italic-slant italic)
+          (regular-shared
+           :inherit regular
+           :default-height 180)
+          (macbook
+           :default-family "Victor Mono"
+           :default-height 150
+           :fixed-pitch-family "Victor Mono"
+           :variable-pitch-family "Inter"
+           :variable-pitch-height 1.1
+           :italic-slant italic)
+          (macbook-cascadia
+           :default-family "Cascadia Code"
+           :default-height 160
+           :fixed-pitch-family "Cascadia Code"
+           :variable-pitch-family "Inter"
+           :variable-pitch-height 1.0
+           :italic-slant italic)
+          (macbook-iosevka
+           :default-family "Iosevka"
+           :default-height 160
+           :fixed-pitch-family "Iosevka"
+           :variable-pitch-family "Iosevka Aile"
+           :variable-pitch-height 1.0
+           :italic-slant italic)
+          (macbook-berkeley
+           :default-family "Berkeley Mono"
+           :default-height 150
+           :fixed-pitch-family "Berkeley Mono"
+           :variable-pitch-family "Inter"
+           :variable-pitch-height 1.1
+           :italic-slant italic)
+          (macbook-shared
+           :inherit macbook
+           :default-height 190)))
 
 (when (display-graphic-p)
   ;; Fonts only work in graphics mode.
