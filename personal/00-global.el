@@ -5,7 +5,6 @@
 (prelude-require-packages
  '(use-package
     quelpa-use-package
-    casual-calc
     catppuccin-theme
     dimmer
     direnv
@@ -160,8 +159,19 @@
   (add-to-list 'consult-buffer-sources persp-consult-source)
   :init (persp-mode))
 
-;; calculator
-(define-key calc-mode-map (kbd "C-o") 'casual-calc-tmenu)
+;; casual porcelains
+(use-package casual-calc
+  :ensure t
+  :bind (:map calc-mode-map
+              ("C-o" . #'casual-calc-tmenu)))
+(use-package casual-dired
+  :ensure t
+  :bind (:map dired-mode-map
+              ("C-o" . #'casual-dired-tmenu)
+              ("s" . #'casual-dired-sort-by-tmenu)))
+
+
+
 
 ;; dimmer
 (customize-set-variable 'dimmer-fraction 0.2)
