@@ -1,6 +1,8 @@
 (require 'package)
 
-(customize-set-variable 'prelude-minimalistic-ui t)
+(setopt
+ prelude-minimalistic-ui t
+ frame-resize-pixelwise t)
 
 ;; Theme setup
 

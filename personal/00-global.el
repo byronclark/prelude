@@ -124,10 +124,9 @@
            (bound-and-true-p pgtk-initialized))
   (setopt tab-bar-show nil))
 
-;; Turn off scroll bars
+;; Scrolling time
 (scroll-bar-mode -1)
-
-;; Keep a little more context when scrolling
+(pixel-scroll-precision-mode)
 (setq next-screen-context-lines 5)
 
 ;; Modeline setup
