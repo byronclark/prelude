@@ -13,8 +13,8 @@
           (3 . (semibold 1.1))
           (t . (semibold))))
   (setq ef-themes-mixed-fonts t)
-  (setq ef-themes-to-toggle '(ef-maris-light ef-maris-dark))
-  (setq prelude-theme 'ef-maris-light)
+  (setq ef-themes-to-toggle '(ef-maris-light ef-owl))
+  (setq prelude-theme 'ef-owl)
   )
 
 (setq modus-themes-headings

@@ -38,15 +38,15 @@
     zig-mode))
 
 (setq auth-sources
-      '((:source "~/.emacs.d/personal/secrets/.authinfo.gpg")))
+      '((:source (expand-file-name "secrets/.authinfo.gpg" byronc/emacs-local-dir))))
 
 (direnv-mode)
 (setq help-window-select t)
 
 ;; *** Appearance ***
 ;; Default italic face sets underline if the font supports it
-(custom-set-faces
- '(italic ((t (:slant italic)))))
+;; (custom-set-faces
+;;  '(italic ((t (:slant italic)))))
 
 (setopt fontaine-presets
         '((regular
@@ -61,6 +61,13 @@
            :default-weight regular
            :fixed-pitch-family "Berkeley Mono"
            :variable-pitch-family "Inter"
+           :italic-slant italic)
+          (regular-inconsolata
+           :default-family "Inconsolata"
+           :default-height 160
+           :fixed-pitch-family "Inconsolata"
+           :variable-pitch-family "Inter"
+           :variable-pitch-height 1.0
            :italic-slant italic)
           (regular-iosevka
            :default-family "Iosevka"
