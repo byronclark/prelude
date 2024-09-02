@@ -38,7 +38,7 @@
     zig-mode))
 
 (setq auth-sources
-      '((:source (expand-file-name "secrets/.authinfo.gpg" byronc/emacs-local-dir))))
+      `((:source ,(expand-file-name "secrets/.authinfo.gpg" byronc/emacs-local-dir))))
 
 (direnv-mode)
 (setq help-window-select t)
@@ -68,12 +68,6 @@
            :fixed-pitch-family "Inconsolata"
            :variable-pitch-family "Inter"
            :variable-pitch-height 1.0
-           :italic-slant italic)
-          (regular-iosevka
-           :default-family "Iosevka"
-           :default-height 150
-           :fixed-pitch-family "Iosevka"
-           :variable-pitch-family "Iosevka Aile"
            :italic-slant italic)
           (regular-iosevka-comfy
            :default-family "Iosevka Comfy"
@@ -105,11 +99,18 @@
            :variable-pitch-family "Inter"
            :variable-pitch-height 1.0
            :italic-slant italic)
-          (macbook-iosevka
-           :default-family "Iosevka"
+          (macbook-iosevka-comfy
+           :default-family "Iosevka Comfy"
            :default-height 160
-           :fixed-pitch-family "Iosevka"
-           :variable-pitch-family "Iosevka Aile"
+           :fixed-pitch-family "Iosevka Comfy"
+           :variable-pitch-family "Iosevka Comfy Duo"
+           :variable-pitch-height 1.0
+           :italic-slant italic)
+          (macbook-inconsolata
+           :default-family "Inconsolata"
+           :default-height 170
+           :fixed-pitch-family "Inconsolata"
+           :variable-pitch-family "Inter"
            :variable-pitch-height 1.0
            :italic-slant italic)
           (macbook-berkeley

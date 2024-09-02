@@ -41,3 +41,4 @@ anaconda-mode/
 /.org-id-locations
 /quelpa/
 /ellama-sessions/
+/forge-database.sqlite
