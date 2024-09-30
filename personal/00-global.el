@@ -53,20 +53,22 @@
            :default-family "Victor Mono"
            :default-height 140
            :fixed-pitch-family "Victor Mono"
-           :variable-pitch-family "Inter"
+           :variable-pitch-family "Source Sans 3"
+           :variable-pitch-height 1.1
            :italic-slant italic)
           (regular-berkeley
            :default-family "Berkeley Mono"
            :default-height 140
            :default-weight regular
            :fixed-pitch-family "Berkeley Mono"
-           :variable-pitch-family "Inter"
+           :variable-pitch-family "Source Sans 3"
+           :variable-pitch-height 1.1
            :italic-slant italic)
           (regular-inconsolata
            :default-family "Inconsolata"
            :default-height 160
            :fixed-pitch-family "Inconsolata"
-           :variable-pitch-family "Inter"
+           :variable-pitch-family "Source Sans 3"
            :variable-pitch-height 1.0
            :italic-slant italic)
           (regular-iosevka-comfy
@@ -80,7 +82,8 @@
            :default-weight regular
            :default-height 140
            :fixed-pitch-family "Cascadia Code"
-           :variable-pitch-family "Inter"
+           :variable-pitch-family "Source Sans 3"
+           :variable-pitch-height 1.1
            :italic-slant italic)
           (regular-shared
            :inherit regular
@@ -196,6 +199,7 @@
 
 (vertico-multiform-mode 1)
 
+(setq save-interprogram-paste-before-kill t)
 
 ;; lsp-mode
 (setq lsp-lens-enable nil)
