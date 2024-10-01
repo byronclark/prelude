@@ -92,35 +92,32 @@
            :default-family "Victor Mono"
            :default-height 150
            :fixed-pitch-family "Victor Mono"
-           :variable-pitch-family "Inter"
+           :variable-pitch-family "Source Sans 3"
            :variable-pitch-height 1.1
            :italic-slant italic)
           (macbook-cascadia
            :default-family "Cascadia Code"
            :default-height 160
            :fixed-pitch-family "Cascadia Code"
-           :variable-pitch-family "Inter"
-           :variable-pitch-height 1.0
+           :variable-pitch-family "Source Sans 3"
            :italic-slant italic)
           (macbook-iosevka-comfy
            :default-family "Iosevka Comfy"
            :default-height 160
            :fixed-pitch-family "Iosevka Comfy"
            :variable-pitch-family "Iosevka Comfy Duo"
-           :variable-pitch-height 1.0
            :italic-slant italic)
           (macbook-inconsolata
            :default-family "Inconsolata"
            :default-height 170
            :fixed-pitch-family "Inconsolata"
-           :variable-pitch-family "Inter"
-           :variable-pitch-height 1.0
+           :variable-pitch-family "Source Sans 3"
            :italic-slant italic)
           (macbook-berkeley
            :default-family "Berkeley Mono"
            :default-height 150
            :fixed-pitch-family "Berkeley Mono"
-           :variable-pitch-family "Inter"
+           :variable-pitch-family "Source Sans 3"
            :variable-pitch-height 1.1
            :italic-slant italic)
           (macbook-shared
