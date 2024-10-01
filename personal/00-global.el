@@ -479,6 +479,9 @@
 ;; **** Swift ****
 (setq-default swift-mode:basic-offset 2)
 
+;; **** Typescript ****
+(add-hook 'typescript-mode-hook #'lsp-deferred)
+
 ;; **** Terraform ****
 (add-hook 'terraform-mode-hook #'lsp-deferred)
 
@@ -490,6 +493,9 @@
 (when (eq system-type 'darwin)
   (setq mac-option-modifier 'meta)
   (setq mac-command-modifier 'super)
+
+  ;; Use GNU coreutils where needed on macOS
+  (setopt insert-directory-program "gls")
 
   ;; macOS builds of emacs have a strict limit of 1024 files that can
   ;; be _watched_ before they start spewing errors about too many open
