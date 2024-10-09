@@ -12,6 +12,7 @@
     elfeed
     embark
     embark-consult
+    exec-path-from-shell
     fennel-mode
     fish-mode
     fontaine
@@ -499,6 +500,8 @@
   ;; files. lsp-mode is especially good at watching lots of files.
   (setq lsp-enable-file-watchers nil))
 
+(when (memq window-system '(mac ns x pgtk))
+  (exec-path-from-shell-initialize))
 
 ;; *** Homegrown Functions ***
 (defun byronc/kill-buffer-relative-name ()
