@@ -219,6 +219,11 @@
 ;; use a posix shell for commands
 (setq shell-file-name "bash")
 
+;; ensure we have eat terminfo files in a place that macos will see them
+(setq eat-term-terminfo-directory (expand-file-name "~/.terminfo"))
+(require 'eat)
+(eat-compile-terminfo)
+
 ;; utf-8 everywhere
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -500,6 +505,7 @@
   ;; files. lsp-mode is especially good at watching lots of files.
   (setq lsp-enable-file-watchers nil))
 
+(setopt exec-path-from-shell-arguments nil)
 (when (memq window-system '(mac ns x pgtk))
   (exec-path-from-shell-initialize))
 
