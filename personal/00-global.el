@@ -253,18 +253,6 @@
 (with-eval-after-load 'projectile
   (define-key projectile-mode-map (kbd "C-c p s r") #'byronc/projectile-ripgrep))
 
-(use-package consult-dash
-  :ensure t
-  :custom
-  (dash-docs-browser-func #'eww)
-  :config
-  (consult-customize consult-dash :initial (thing-at-point 'symbol))
-  (dash-docs--ensure-created-docsets-path (dash-docs-docsets-path))
-  (dolist (docset '("Clojure" "Python_3" "HTML" "JavaScript"))
-    (dash-docs-ensure-docset-installed docset))
-  :init
-  (setq dash-docs-common-docsets '("HTML" "JavaScript")))
-
 ;; *** Org Mode ***
 (setopt
  ;; Edit settings
@@ -426,8 +414,7 @@
 (add-to-list 'auto-mode-alist '("\\.fiddle\\'" . clojure-mode)) ;[Calva fiddle files](https://calva.io/fiddle-files/)
 
 (defun byronc/clojure-mode-settings ()
-  (lsp-deferred)
-  (setq-local consult-dash-docsets '("Clojure")))
+  (lsp-deferred))
 
 (add-hook 'clojure-mode-hook #'byronc/clojure-mode-settings)
 
@@ -474,8 +461,7 @@
   (pyvenv-mode)
   (require 'lsp-pyright)
   (lsp-deferred)
-  (python-black-on-save-mode-enable-dwim)
-  (setq-local consult-dash-docsets '("Python 3")))
+  (python-black-on-save-mode-enable-dwim))
 
 (add-hook 'python-mode-hook #'byronc/python-mode-settings)
 
