@@ -199,6 +199,11 @@
 
 (setq save-interprogram-paste-before-kill t)
 
+;; Disable undo-tree mode in favor of the built-in undo system.
+;; There are some terrible behaviors with ellama and occasionally XML files that aren't
+;; worth the pain.
+(global-undo-tree-mode -1)
+
 ;; lsp-mode
 (setq lsp-lens-enable nil)
 (setq lsp-headerline-breadcrumb-enable nil)
