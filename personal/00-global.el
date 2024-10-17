@@ -363,6 +363,7 @@
 
 (use-package ellama
   :ensure t
+  :after transient
   :init
   (require 'llm-claude)
   (require 'llm-openai)
@@ -375,7 +376,10 @@
           ellama-providers
           '(("openai" . (make-llm-openai
                          :key (auth-source-pick-first-password :host "openai.api")
-                         :chat-model "gpt-4o")))))
+                         :chat-model "gpt-4o"))))
+
+  :bind
+  (("C-c M" . ellama-transient-main-menu)))
 
 ;; *** Languages ***
 (require 'quelpa-use-package)
