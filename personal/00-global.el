@@ -363,8 +363,10 @@
 
 (use-package ellama
   :ensure t
-  :after transient
-  :init
+  :after (transient)
+  :demand t                             ;Adding the binding for the menu makes this
+                                        ;deferred by default.
+  :config
   (require 'llm-claude)
   (require 'llm-openai)
   (setopt llm-warn-on-nonfree nil
@@ -372,7 +374,7 @@
           ellama-sessions-directory (expand-file-name "~/org/ellama-sessions")
           ellama-provider (make-llm-claude
                            :key (auth-source-pick-first-password :host "claude.api")
-                           :chat-model "claude-3-5-sonnet-20240620")
+                           :chat-model "claude-3-5-sonnet-latest")
           ellama-providers
           '(("openai" . (make-llm-openai
                          :key (auth-source-pick-first-password :host "openai.api")
