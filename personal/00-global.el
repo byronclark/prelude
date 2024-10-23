@@ -174,15 +174,14 @@
   :init (persp-mode))
 
 ;; casual porcelains
-(use-package casual-calc
+(use-package casual
   :ensure t
-  :bind (:map calc-mode-map
-              ("C-o" . #'casual-calc-tmenu)))
-(use-package casual-dired
-  :ensure t
-  :bind (:map dired-mode-map
-              ("C-o" . #'casual-dired-tmenu)
-              ("s" . #'casual-dired-sort-by-tmenu)))
+  :bind
+  (:map calc-mode-map
+        ("C-o" . #'casual-calc-tmenu))
+  (:map dired-mode-map
+        ("C-o" . #'casual-dired-tmenu)
+        ("s" . #'casual-dired-sort-by-tmenu)))
 
 ;; Spell checking with jinx
 (setopt prelude-flyspell nil)
