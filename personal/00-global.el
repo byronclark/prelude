@@ -153,7 +153,7 @@
 ;; Disable undo-tree mode in favor of the built-in undo system.
 ;; There are some terrible behaviors with ellama and occasionally XML files that aren't
 ;; worth the pain.
-(global-undo-tree-mode -1)
+(setopt prelude-unto-tree nil)
 
 ;; lsp-mode
 (setq lsp-lens-enable nil)
