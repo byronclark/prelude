@@ -353,7 +353,7 @@
   (use-package copilot-chat
     :ensure t
     :config
-    (setopt copilot-chat-model "claude-3.5-sonnet")))
+    (setopt copilot-chat-list-added-buffers-only t)))
 
 (defun byronc/prog-mode-settings ()
   (setq fill-column 90))
